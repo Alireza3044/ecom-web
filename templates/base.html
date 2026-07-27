@@ -1,0 +1,17 @@
+{% load tailwind_cli %}
+{% load django_htmx %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce website</title>
+  <link rel="stylesheet" href="/static/css/index.css">
+  {% tailwind_css %}
+  {% htmx_script %}
+</head>
+<body hx-headers='{"x-csrftoken": "{{ csrf_token }}"}' class="font-[NotoSans]">
+  {% block content %}{% endblock content %}
+</body>
+</html>

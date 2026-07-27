@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="p-4 flex space-x-8 border border-gray-200">
+    <img class="sm:w-96 w-64 rounded-lg" src="{{ product.image_url }}" alt="{{ product.title }}">
+    <div class="pt-8 space-y-2">
+      <h3 class="font-bold sm:text-2xl text-xl">{{ product.title }}</h3>
+      <p>{{ product.description }}</p>
+      <p class="font-bold text-emerald-600 text-xl">${{ product.price }}</p>
+    </div>
+  </div>
+{% endblock content %}
