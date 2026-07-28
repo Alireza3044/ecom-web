@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
 
+{% block cart_count %}
+  {{ c_count }}
+{% endblock cart_count %}
+
 {% block content %}
   <div class="container-lg p-6 space-y-4">
     <div>
       <span>Total cart items:</span>
-      <span id="cart-badge" class="text-red-500 text-2xl">{{ cart_count }}</span>
       <button
         class="flex-2 text-center py-1 px-2 bg-red-500 text-white rounded-lg cursor-pointer"
         hx-post="{% url "shop:cart-clear" %}"
-        hx-target="#cart-badge"
+        hx-target="#cart-count"
         hx-swap="innerHTML"
       >Clear</button>
     </div>

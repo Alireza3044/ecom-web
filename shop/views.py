@@ -25,7 +25,7 @@ def index(request):
         context = {
             "page_obj": page_obj,
             "form": form,
-            "cart_count": len(cart),
+            "c_count": len(cart),
         }
         return render(request, "shop/index.html", context)
     
