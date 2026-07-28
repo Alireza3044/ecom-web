@@ -10,7 +10,7 @@ class Cart:
             self.cart = {}
             self.session["cart"] = self.cart
     
-    def get_cart(self) -> None:
+    def get_cart(self) -> dict[str, int]:
         return self.cart
     
     def add(self, product_id: int | str, quantity: int = 1) -> None:
