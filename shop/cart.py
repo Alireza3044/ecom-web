@@ -3,53 +3,36 @@ from django.core.handlers.wsgi import WSGIRequest
 
 class Cart:
     def __init__(self, request: WSGIRequest) -> None:
-        self.session = request.session
+        self.__session = request.session
+        self.__cart = self.__session.get("cart")
 
-        self.cart = self.session.get("cart")
-        if self.cart is None:
-            self.cart = {}
-            self.session["cart"] = self.cart
+        if self.__cart is None:
+            self.__cart: list = []
+            self.__session["cart"] = self.__cart
     
-    def get_cart(self) -> dict[str, int]:
-        return self.cart
+    @property
+    def cart(self) -> list[int]:
+        return self.__cart
     
-    def add(self, product_id: int | str, quantity: int = 1) -> None:
-        if quantity <= 0:
-            raise ValueError("Quantity must be positive")
-
-        product_id = str(product_id)
-        if product_id not in self.cart:
-            self.cart[product_id] = 0
-        
-        self.cart[product_id] += quantity
-        self.save()
-    
-    def reduce(self, product_id: int | str) -> None:
-        product_id = str(product_id)
-        if product_id in self.cart:
-            quantity = self.cart[product_id]
-            if quantity > 1:
-                self.cart[product_id] = quantity - 1
-            else:
-                del self.cart[product_id]
-            
+    def add(self, product_id: int) -> None:
+        if product_id not in self.__cart:
+            self.__cart.append(product_id)
             self.save()
     
-    def remove(self, product_id: int | str) -> None:
-        product_id = str(product_id)
-        if product_id in self.cart:
-            del self.cart[product_id]
+    def remove(self, product_id: int) -> None:
+        if product_id in self.__cart:
+            self.__cart.remove(product_id)
             self.save()
     
     def clear(self) -> None:
-        if "cart" in self.session:
-            del self.session["cart"]
+        if "cart" in self.__session:
+            del self.__session["cart"]
         
-        self.cart = {}
+        self.__cart = []
         self.save()
     
     def save(self) -> None:
-        self.session.modified = True
+        self.__session.modified = True
 
-    def __len__(self) -> None:
-        return sum(item for item in self.cart.values())
+    def __len__(self) -> int:
+        return len(self.__cart)
