@@ -19,17 +19,17 @@ class Cart:
 
         product_id = str(product_id)
         if product_id not in self.cart:
-            self.cart[product_id] = {"quantity": 0}
+            self.cart[product_id] = 0
         
-        self.cart[product_id]["quantity"] += quantity
+        self.cart[product_id] += quantity
         self.save()
     
     def reduce(self, product_id: int | str) -> None:
         product_id = str(product_id)
         if product_id in self.cart:
-            quantity = self.cart[product_id]["quantity"]
+            quantity = self.cart[product_id]
             if quantity > 1:
-                self.cart[product_id]["quantity"] = quantity - 1
+                self.cart[product_id] = quantity - 1
             else:
                 del self.cart[product_id]
             
@@ -52,4 +52,4 @@ class Cart:
         self.session.modified = True
 
     def __len__(self) -> None:
-        return sum(item["quantity"] for item in self.cart.values())
+        return sum(item for item in self.cart.values())
