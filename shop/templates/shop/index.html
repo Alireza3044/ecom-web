@@ -7,30 +7,12 @@
 
 {% block content %}
   <div class="container-lg p-6 space-y-4">
-    <div id="cart-popover" class="w-60">
-      <div class="flex w-full justify-between">
-        <div class="flex space-x-2 w-40">
-          <span>6</span>
-          <p class="truncate">Gaming Mouse Pro Extra</p>
-        </div>
-        <p class="text-emerald-600">$18200</p>
-      </div>
-      <div class="flex w-full justify-between">
-        <div class="flex space-x-2 w-40">
-          <span>3</span>
-          <p class="truncate">Air Pod 2 Pro</p>
-        </div>
-        <p class="text-emerald-600">$1100</p>
-      </div>
-    </div>
-    <div>
       <button
         class="flex-2 text-center py-1 px-2 bg-red-500 text-white rounded-lg cursor-pointer"
         hx-post="{% url "shop:cart-clear" %}"
         hx-target="#cart-count"
         hx-swap="innerHTML"
       >Clear</button>
-    </div>
     
     <form method="POST" class="flex w-full space-x-4">
       {% csrf_token %}
