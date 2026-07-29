@@ -51,10 +51,11 @@ class ProductDetail(DetailView):
 
 
 def checkout(request):
-    return HttpResponse()
+    if request.method == "GET":
+        return render(request, "shop/checkout.html")
 
 
-def cart(request):
+def cart_view(request):
     if request.htmx:
         cart_obj = cart.Cart(request)
         logger.debug(f"cart.Cart content: {cart_obj.cart}")
