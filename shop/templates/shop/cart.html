@@ -3,19 +3,21 @@
     <span>{{ count }}</span>
     <span>Items in Cart</span>
   </h2>
-  <div class="max-h-50 overflow-y-auto my-4">
-    {% for product in products %}
-      <div class="flex w-full min-h-0 justify-between space-x-4">
-        <p class="truncate">{{ product.title }}</p>
-        <p class="text-emerald-600">${{ product.price }}</p>
-      </div>
-    {% endfor %}
-  </div>
-  <div class="flex w-full justify-between space-x-4">
-    <p class="font-bold">Total</p>
-    <p class="font-bold text-emerald-600">${{ total|floatformat:2 }}</p>
-  </div>
-  <div class="w-full flex justify-center">
-    <a href="{% url "shop:checkout" %}" class="text-white bg-blue-400 py-1 px-2 rounded-lg">Checkout</a>
-  </div>
+  {% if count %}
+    <div class="max-h-50 overflow-y-auto my-4">
+      {% for product in products %}
+        <div class="flex w-full min-h-0 justify-between space-x-4">
+          <p class="truncate">{{ product.title }}</p>
+          <p class="text-emerald-600">${{ product.price }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="flex w-full justify-between space-x-4">
+      <p class="font-bold">Total</p>
+      <p class="font-bold text-emerald-600">${{ total|floatformat:2 }}</p>
+    </div>
+    <div class="w-full flex justify-center">
+      <a href="{% url "shop:checkout" %}" class="text-white bg-blue-400 py-1 px-2 rounded-lg">Checkout</a>
+    </div>
+  {% endif %}
 </div>
