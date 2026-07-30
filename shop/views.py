@@ -51,8 +51,19 @@ class ProductDetail(DetailView):
 
 
 def checkout(request):
+    form = forms.OrderForm(request.POST or None)
+    
     if request.method == "GET":
-        return render(request, "shop/checkout.html")
+        cart_obj = cart.Cart(request)
+        products = models.Product.objects.filter(pk__in=cart_obj.cart)
+        agg = products.aggregate(total=Sum("price"))
+        
+        context = {
+            "form": form,
+            "products": products,
+            "total": f"{agg['total']:.2f}",
+        }
+        return render(request, "shop/checkout.html", context)
 
 
 def cart_view(request):

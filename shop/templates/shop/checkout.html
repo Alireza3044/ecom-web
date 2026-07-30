@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="w-full flex justify-center p-8">
+    <div class="w-128 space-y-2">
+      <div class="w-full border border-gray-500 space-y-4 p-2">
+        <div>
+          {% for product in products %}
+            <div class="w-full flex justify-between">
+              <p>{{ product.title }}</p>
+              <p>${{ product.price }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="flex justify-between">
+          <p>Total</p>
+          <p class="text-emerald-600 font-bold">${{ total }}</p>
+        </div>
+      </div>
+      <form method="post">
+        {{ form }}
+        <div class="flex justify-center">
+          <button type="submit" class="w-full mt-4 py-1 px-2 text-white bg-blue-400 rounded-lg cursor-pointer">Purchase</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
