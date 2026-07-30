@@ -74,6 +74,12 @@ def checkout(request):
     return redirect("shop:index")
 
 
+def purchase_success(request):
+    if request.htmx:
+        return render(request, "shop/purchase_success.html")
+    return redirect("shop:index")
+
+
 def cart_view(request):
     if request.htmx:
         cart_obj = cart.Cart(request)
