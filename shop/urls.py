@@ -7,6 +7,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("<int:pk>/", views.ProductDetail.as_view(), name="detail"),
     path("checkout/", views.checkout, name="checkout"),
+    path("purchase-success/", views.purchase_success, name="purchase-success"),
     path("cart/", views.cart_view, name="cart"),
     path("cart/clear/", views.cart_clear, name="cart-clear"),
     path("cart/add/<int:pk>/", views.cart_add, name="cart-add"),
