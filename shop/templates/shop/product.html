@@ -10,7 +10,7 @@
       class="flex-1 text-center py-1 px-2 bg-yellow-400 rounded-lg"
     >View</a>
     <button
-      class="flex-2 text-center py-1 px-2 bg-yellow-400 rounded-lg cursor-pointer truncate"
+      class="flex-2 py-1 px-2 bg-yellow-400 rounded-lg cursor-pointer truncate"
       hx-post="{% url "shop:cart-add" product.pk %}"
       hx-target="#cart-count"
       hx-swap="innerHTML"
