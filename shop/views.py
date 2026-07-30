@@ -52,18 +52,26 @@ class ProductDetail(DetailView):
 
 def checkout(request):
     form = forms.OrderForm(request.POST or None)
-    
-    if request.method == "GET":
-        cart_obj = cart.Cart(request)
-        products = models.Product.objects.filter(pk__in=cart_obj.cart)
-        agg = products.aggregate(total=Sum("price"))
-        
-        context = {
-            "form": form,
-            "products": products,
-            "total": f"{agg['total']:.2f}",
-        }
+    cart_obj = cart.Cart(request)
+    products = models.Product.objects.filter(pk__in=cart_obj.cart)
+    total = products.aggregate(total=Sum("price"))["total"]
+    context = {
+        "form": form,
+        "products": products,
+        "total": total,
+    }
+
+    if products.exists():
+        if request.method == "POST" and form.is_valid():
+            instance = form.save(commit=False)
+            instance.save()
+            instance.products.set(products)
+            
+            cart_obj.clear()
+
+            return redirect("shop:index")
         return render(request, "shop/checkout.html", context)
+    return redirect("shop:index")
 
 
 def cart_view(request):
@@ -72,11 +80,11 @@ def cart_view(request):
         logger.debug(f"cart.Cart content: {cart_obj.cart}")
 
         products = models.Product.objects.filter(pk__in=cart_obj.cart)
-        agg = products.aggregate(total=Sum("price"))
+        total = products.aggregate(total=Sum("price"))["total"]
         context = {
             "products": products,
             "count": len(cart_obj),
-            "total": f"{agg['total']:.2f}",
+            "total": total,
         }
         return render(request, "shop/cart.html", context)
     return redirect(request.path)
