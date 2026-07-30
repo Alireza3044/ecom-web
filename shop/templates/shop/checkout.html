@@ -14,13 +14,15 @@
         </div>
         <div class="flex justify-between">
           <p>Total</p>
-          <p class="text-emerald-600 font-bold">${{ total }}</p>
+          <p class="text-emerald-600 font-bold">${{ total|floatformat:2 }}</p>
         </div>
       </div>
       <form method="post">
+        {% csrf_token %}
         {{ form }}
-        <div class="flex justify-center">
-          <button type="submit" class="w-full mt-4 py-1 px-2 text-white bg-blue-400 rounded-lg cursor-pointer">Purchase</button>
+        <div class="flex justify-center mt-4 space-x-2">
+          <button type="submit" class="flex-2 py-1 px-2 text-white bg-blue-400 rounded-lg cursor-pointer">Purchase</button>
+          <a href="{% url "shop:index" %}" class="flex-1 text-center py-1 px-2 text-white bg-red-500 rounded-lg cursor-pointer">Cancel</a>
         </div>
       </form>
     </div>
