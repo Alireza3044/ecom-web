@@ -76,7 +76,7 @@ def cart_view(request):
         context = {
             "products": products,
             "count": len(cart_obj),
-            "total": agg["total"],
+            "total": f"{agg['total']:.2f}",
         }
         return render(request, "shop/cart.html", context)
     return redirect(request.path)
