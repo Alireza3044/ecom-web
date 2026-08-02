@@ -1,3 +1,4 @@
+{% load static %}
 {% load tailwind_cli %}
 {% load django_htmx %}
 
@@ -8,28 +9,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Plaza</title>
   <link rel="stylesheet" href="/static/css/index.css">
+  <script defer src="{% static "/js/vendor/alpine.min.js" %}"></script>
   {% tailwind_css %}
   {% htmx_script %}
 </head>
-<body hx-headers='{"x-csrftoken": "{{ csrf_token }}"}' class="font-[NotoSans]">
+<body
+  x-data="{ cartCount: 0 }"
+  x-init="
+    fetch('{% url "shop:cart-count" %}')
+      .then(response => response.json())
+      .then(data => cartCount = data)
+      .catch(error => console.error('Error fetching cart count:', error));
+  "
+  hx-headers='{"x-csrftoken": "{{ csrf_token }}"}'
+  class="font-[NotoSans]">
   <header>
     <nav class="flex items-center bg-blue-400 text-white p-2 space-x-8">
       <a href="{% url "shop:index" %}" class="font-bold text-2xl">Tech Plaza</a>
-      <button
-        class="cursor-pointer"
-        hx-get="{% url "shop:cart" %}"
-        hx-target="#cart-popover"
-        hx-swap="innerHTML"
+      <div
+        x-data="{ open: false }"
+        @click.outside="open = false"
+        class="relative inline-block"
       >
-        <span>Cart(</span>
-        <span id="cart-count" class="text-yellow-400 text-lg">
-          {% block cart_count %}{% endblock cart_count %}
-        </span>
-        <span>)</span>
-      </button>
+        <button
+          @click="
+            if (!open) {
+              htmx.ajax('GET', '{% url "shop:cart" %}', { 
+                target: '#cart-popover',
+                swap: 'innerHTML'
+              });
+            }
+            fetch('{% url "shop:cart-count" %}')
+              .then(response => response.json())
+              .then(data => cartCount = data)
+              .catch(error => console.error('Error fetching cart count:', error));
+            
+            open = !open;
+          "
+          type="button"
+          class="cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+          </svg>
+          <span
+            x-text="cartCount"
+            id="cart-count-badge"
+            class="absolute -top-2 -right-2 inline-flex items-center justify-center p-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full min-w-[20px] h-5"
+          ></span>
+        </button>
+        <div
+          id="cart-popover"
+          x-show="open"
+          x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transition opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transition opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute left-1/2 -translate-x-1/2 z-10 mt-3 w-72 origin-top-right rounded-lg shadow-lg ring-1 ring-black/5 focus:outline-none">
+        </div>
+      </div>
     </nav>
   </header>
-  <div id="cart-popover"></div>
   {% block content %}{% endblock content %}
 </body>
 </html>
