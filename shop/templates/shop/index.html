@@ -7,13 +7,6 @@
 
 {% block content %}
   <div class="container-lg p-6 space-y-4">
-      <button
-        class="flex-2 text-center py-1 px-2 bg-red-500 text-white rounded-lg cursor-pointer"
-        hx-post="{% url "shop:cart-clear" %}"
-        hx-target="#cart-count"
-        hx-swap="innerHTML"
-      >Clear</button>
-    
     <form method="POST" class="flex w-full space-x-4">
       {% csrf_token %}
       {{ form.search|add_class:"py-1 px-2 border border-blue-400 focus:outline-blue-400 rounded-lg flex-5" }}
