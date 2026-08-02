@@ -69,21 +69,26 @@ def checkout(request):
             
             cart_obj.clear()
 
-            return redirect("shop:index")
+            return render(request, "shop/purchase_success.html")
         return render(request, "shop/checkout.html", context)
     return redirect("shop:index")
 
 
-def purchase_success(request):
-    if request.htmx:
-        return render(request, "shop/purchase_success.html")
+def purchase_cancel(request):
+    cart_obj = cart.Cart(request)
+    cart_obj.clear()
     return redirect("shop:index")
+
+
+def cart_count(request):
+    cart_obj = cart.Cart(request)
+    return HttpResponse(len(cart_obj))
 
 
 def cart_view(request):
     if request.htmx:
         cart_obj = cart.Cart(request)
-        logger.debug(f"cart.Cart content: {cart_obj.cart}")
+        logger.debug(f"Cart content: {cart_obj.cart}")
 
         products = models.Product.objects.filter(pk__in=cart_obj.cart)
         total = products.aggregate(total=Sum("price"))["total"]
