@@ -11,9 +11,11 @@
     >View</a>
     <button
       class="flex-2 py-1 px-2 bg-yellow-400 rounded-lg cursor-pointer truncate"
-      hx-post="{% url "shop:cart-add" product.pk %}"
-      hx-target="#cart-count"
+      type="button"
+      hx-post="{% url 'shop:cart-add' product.pk %}"
+      hx-trigger="click"
       hx-swap="innerHTML"
+      hx-target="#cart-count-badge"
     >Add to Cart</button>
   </div>
 </div>
