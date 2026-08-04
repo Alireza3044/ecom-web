@@ -15,15 +15,16 @@ The project uses Django as it's full-stack framework in addition to TailwindCSS,
    `pip install -r requirements.txt`
 
 3. Migrate the models by:
+
    `python manage.py migrate`
 
-4. Now you can run the Django dev server alongside TailwindCSS by following command:
+5. Now you can run the Django dev server alongside TailwindCSS by following command:
 
    `python manage.py tailwind runserver`
 
-5. After first run it would try to download the TailwindCSS's binary file.
+6. After first run it would try to download the TailwindCSS's binary file.
 
-6. After installation, now you can explore the project!
+7. After installation, now you can explore the project!
 
 Note: Also you can load a dataset of dummy data by running the following command:
 
