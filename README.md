@@ -14,7 +14,9 @@ The project uses Django as it's full-stack framework in addition to TailwindCSS,
 
    `pip install -r requirements.txt`
 
-3. Migrate the models by:
+3. Create a .env file with variables DJANGO_DEBUG and DJANGO_SECRET_KEY. If you want to deploy the project, set the DJANGO_DEBUG to False, otherwise to True. For DJANGO_SECRET_KEY you can generate one by first entering to the Django shell via `python manage.py shell` and then importing and running the function `get_random_secret_key` from `django.core.management.utils`.
+
+4. Migrate the models by:
 
    `python manage.py migrate`
 
