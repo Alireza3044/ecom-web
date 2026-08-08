@@ -8,7 +8,7 @@ The project uses Django as it's full-stack framework in addition to TailwindCSS,
 
 1. Clone the repository to your machine by command:
 
-   `git clone https://github.com/Alireza3044/e-commerce-website.git`
+   `git clone https://github.com/Alireza3044/ecom-web.git`
 
 2. Install the required packages from requirements.py by running the following command:
 
