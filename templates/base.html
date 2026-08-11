@@ -39,11 +39,6 @@
                 swap: 'innerHTML'
               });
             }
-            fetch('{% url "shop:cart-count" %}')
-              .then(response => response.json())
-              .then(data => cartCount = data)
-              .catch(error => console.error('Error fetching cart count:', error));
-            
             open = !open;
           "
           type="button"
