@@ -1,0 +1,314 @@
+[
+{
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+        "title": "XC Watch",
+        "price": "200.00",
+        "discount_price": "170.00",
+        "description": "A valuable and excellent watch.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDBExACyGUPV1R64yMs6KhiSXhKcmYaj97y08iX_LxYg&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 2,
+    "fields": {
+        "title": "NB Laptop",
+        "price": "450.00",
+        "discount_price": "400.00",
+        "description": "A mid-level laptop with high performance chipset.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlxCnEP_yRmoBiymlx8iIQ4r_2lf4NsB6-VcDBkOJJcA&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 3,
+    "fields": {
+        "title": "YL Smartphone",
+        "price": "240.00",
+        "discount_price": "190.00",
+        "description": "An all-around smartphone with a perfect operating system.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg8ltrCHrNlCeUwXn1LnJ9jDDLQ4IByv9TrhN6hmYKQg&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 4,
+    "fields": {
+        "title": "CZC Television",
+        "price": "700.00",
+        "discount_price": "600.00",
+        "description": "A LCD television with high lightning.",
+        "category": "",
+        "image_url": "https://freesvg.org/img/Television.png"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 5,
+    "fields": {
+        "title": "NMB Tablet",
+        "price": "300.00",
+        "discount_price": "280.00",
+        "description": "A powerful tablet with a decent NPU.",
+        "category": "",
+        "image_url": "https://freesvg.org/img/iPad.png"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 6,
+    "fields": {
+        "title": "MJ Camera",
+        "price": "700.00",
+        "discount_price": "650.00",
+        "description": "A powerful camera.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiw0LwkeaskGRvIol4pDR2ewb0cex0UxgBZPdoufW_-A&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 7,
+    "fields": {
+        "title": "BB Headphones",
+        "price": "150.00",
+        "discount_price": "120.00",
+        "description": "Noise-cancelling over-ear headphones with premium sound quality.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDKQd3280KvKs8l0Xu6eYGFpRZMM82fsWwMdbpZuq9w&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 8,
+    "fields": {
+        "title": "Fitness Tracker Band",
+        "price": "80.00",
+        "discount_price": "65.00",
+        "description": "Track your steps, heart rate, and sleep patterns with ease.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2jYKmDg7eUTYQUSDAXhGdZl6mfq9E2hRnY4M6YQaPYe6MQsGwmK427w&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 9,
+    "fields": {
+        "title": "Gaming Mouse Pro",
+        "price": "60.00",
+        "discount_price": "45.00",
+        "description": "Ergonomic gaming mouse with RGB lighting and 8 programmable buttons.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNwFPFczQ2F_XKDZnflj4tFsZxSgawnlNKJ1hheb1NAGfNuRvWeNJcpv0u&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 10,
+    "fields": {
+        "title": "Mechanical Keyboard",
+        "price": "120.00",
+        "discount_price": "100.00",
+        "description": "Tactile mechanical keyboard with blue switches and customizable RGB.",
+        "category": "",
+        "image_url": "https://shop.rapoo.com/cdn/shop/files/1.V700DIY-75-BK_GN.png?v=1758183273&width=2000"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 11,
+    "fields": {
+        "title": "Wireless Earbuds",
+        "price": "90.00",
+        "discount_price": "75.00",
+        "description": "True wireless earbuds with 24-hour battery life and water resistance.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg5iJYzE8YUtnhsOKRIX4tom4wFT2Ul2jnJaW1OaCpAw&s"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 12,
+    "fields": {
+        "title": "Smart Speaker Mini",
+        "price": "50.00",
+        "discount_price": "40.00",
+        "description": "Compact smart speaker with voice assistant and room-filling sound.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfpSb5i5D--PiDKjtWUNTamqs-uwX9WQxxZ-pvHk-pmw&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 13,
+    "fields": {
+        "title": "External SSD 1TB",
+        "price": "130.00",
+        "discount_price": "110.00",
+        "description": "Portable external SSD with USB-C and read speeds up to 1000MB/s.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP5Y8BSM70LTDxBK2AGbTj-kRhSC8cgLFARJacESVGAA&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 14,
+    "fields": {
+        "title": "4K Action Camera",
+        "price": "180.00",
+        "discount_price": "155.00",
+        "description": "Waterproof action camera capturing stunning 4K video at 60fps.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBbYQKXKNggh1qBqAbOml9_dWeWqvyxrvl_sMdHQgbA&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 15,
+    "fields": {
+        "title": "Portable Power Bank",
+        "price": "45.00",
+        "discount_price": "35.00",
+        "description": "20000mAh power bank with dual USB ports and fast charging support.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0j_-yjmbza9ckaPRYpHkAupn5C29M-A1q0dBx0RujlA&s"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 16,
+    "fields": {
+        "title": "Wireless Charging Pad",
+        "price": "30.00",
+        "discount_price": "25.00",
+        "description": "Qi-compatible charging pad for all wireless-enabled devices.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJYPVD_is8w6lFk7u_lmYSWQ7_qZfEq9owWugZI6ZcSg&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 17,
+    "fields": {
+        "title": "Smart Doorbell",
+        "price": "160.00",
+        "discount_price": "140.00",
+        "description": "Video doorbell with 1080p camera and two-way audio communication.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqSvD8zN3Qy0KYU9iVmEoqRWQx6sVt0YatLUSL0LbqA&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 18,
+    "fields": {
+        "title": "Robot Vacuum Cleaner",
+        "price": "250.00",
+        "discount_price": "210.00",
+        "description": "Intelligent robot vacuum with laser mapping and self-charging.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSojOrVJ3pK9p2aEvIg0kK7QdlqanYh_P5WJybPjOw5Hw&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 19,
+    "fields": {
+        "title": "Bluetooth FM Transmitter",
+        "price": "25.00",
+        "discount_price": "20.00",
+        "description": "Car FM transmitter with Bluetooth 5.0 and hands-free calling.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdxuDCplTkDMUpgT_wWlRDNtXusnR19EWCznLEnQJd6Q&s"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 20,
+    "fields": {
+        "title": "Smart Light Bulb",
+        "price": "18.00",
+        "discount_price": "15.00",
+        "description": "Wi-Fi enabled color-changing smart bulb with voice control support.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRceg1IKk1VL03mc3g4WKDlCuOALZJboPKDr7gDp53eQ&s"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 21,
+    "fields": {
+        "title": "Laptop Stand",
+        "price": "35.00",
+        "discount_price": "28.00",
+        "description": "Adjustable aluminum laptop stand with improved cooling and ergonomics.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3IHsKMDtTEYlLWzLzx_dN2jSD5KqBaI6qYJKssNH4Eg&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 22,
+    "fields": {
+        "title": "Webcam HD 1080p",
+        "price": "55.00",
+        "discount_price": "45.00",
+        "description": "Full HD webcam with built-in microphone for crystal-clear video calls.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQznQ8yXhr9ROULdO4u2AUZw7SNoN7MH4bdk0tUdf_Cxw&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 23,
+    "fields": {
+        "title": "Gaming Controller",
+        "price": "65.00",
+        "discount_price": "55.00",
+        "description": "Wireless gaming controller compatible with PC, console, and mobile.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH3weXai_kJtAB27beEff9EgyQic8eTBxBLbDZuUyM2A&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 24,
+    "fields": {
+        "title": "Smart Thermostat",
+        "price": "200.00",
+        "discount_price": "175.00",
+        "description": "Energy-saving smart thermostat with remote control via smartphone.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuN3shRaChvbc7dccVB9F6VvJQkvwCyMr3dmm7bTsrQA&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 25,
+    "fields": {
+        "title": "USB-C Hub",
+        "price": "40.00",
+        "discount_price": "32.00",
+        "description": "7-in-1 USB-C hub with HDMI, Ethernet, USB 3.0, and SD card slots.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrZrFyQhZQY1EN-lbiemq49WJZ2WdKLwXsLB9fbeHgpA&s=10"
+    }
+},
+{
+    "model": "shop.product",
+    "pk": 26,
+    "fields": {
+        "title": "Drone Mini",
+        "price": "350.00",
+        "discount_price": "300.00",
+        "description": "Compact foldable drone with 4K camera and 30-minute flight time.",
+        "category": "",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYArwrppKYcuvPVnwFQ1Rskqurf0PxnBGKbP9Js9tYgA&s=10"
+    }
+}
+]
