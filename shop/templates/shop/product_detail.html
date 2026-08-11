@@ -7,14 +7,7 @@
       <h3 class="font-bold sm:text-2xl text-xl">{{ product.title }}</h3>
       <p>{{ product.description }}</p>
       <p class="font-bold text-emerald-600 text-xl">${{ product.price }}</p>
-      <button
-        class="py-1 px-2 bg-yellow-400 rounded-lg cursor-pointer truncate"
-        type="button"
-        hx-post="{% url 'shop:cart-add' product.pk %}"
-        hx-trigger="click"
-        hx-swap="innerHTML"
-        hx-target="#cart-count-badge"
-      >Add to Cart</button>
+      {% include "shop/add_to_cart_btn.html" with class="" %}
     </div>
   </div>
 {% endblock content %}

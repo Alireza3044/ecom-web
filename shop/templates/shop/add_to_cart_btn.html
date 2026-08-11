@@ -1,0 +1,8 @@
+<button
+  class="py-1 px-2 bg-yellow-400 rounded-lg cursor-pointer truncate {{ class }}"
+  type="button"
+  hx-post="{% url 'shop:cart-add' product.pk %}"
+  hx-trigger="click"
+  hx-swap="innerHTML"
+  hx-target="#cart-count-badge"
+>Add to Cart</button>
