@@ -86,7 +86,7 @@ def cart_count(request):
 
 
 def cart_view(request):
-    if request.htmx:
+    if request.headers.get("Hx-Request"):
         cart_obj = cart.Cart(request)
         logger.debug(f"Cart content: {cart_obj.cart}")
 
@@ -102,7 +102,7 @@ def cart_view(request):
 
 
 def cart_clear(request):
-    if request.htmx:
+    if request.headers.get("Hx-Request"):
         cart.Cart(request).clear()
         logger.debug(f"Clear cart content.")
         return HttpResponse(0)
@@ -110,7 +110,7 @@ def cart_clear(request):
 
 
 def cart_add(request, pk):
-    if request.htmx:
+    if request.headers.get("Hx-Request"):
         cart_obj = cart.Cart(request)
         product = get_object_or_404(models.Product, pk=pk)
         cart_obj.add(product.pk)
@@ -122,7 +122,7 @@ def cart_add(request, pk):
 
 
 def cart_remove(request, pk):
-    if request.htmx:
+    if request.headers.get("Hx-Request"):
         cart_obj = cart.Cart(request)
         product = get_object_or_404(models.Product, pk=pk)
         cart_obj.remove(product.pk)
