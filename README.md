@@ -26,7 +26,7 @@ The project uses Django as it's full-stack framework in addition to TailwindCSS,
    DB_PORT
    ```
 
-4. For deployment, set the DJANGO_DEBUG to False. For DJANGO_SECRET_KEY, you can generate one by running the function get_random_secret_key` from `django.core.management.utils`.
+4. For deployment, set the DJANGO_DEBUG to False. For DJANGO_SECRET_KEY, you can generate one by running the function `get_random_secret_key` from `django.core.management.utils`.
 
 5. Migrate the models by:
 
